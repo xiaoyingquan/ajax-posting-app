@@ -2,12 +2,17 @@
   <div class="panel-heading"><%= post.user.display_name %></div>
   <div class="panel-body">
     <span id="post-thumbsup-<%= post.id %>" class="label label-success"><%= post.likes.count %> 👍</span>
+    <span id="post-heart-<%= post.id %>" class="label label-success"><%= post.collections.count %> ❤️</span>
     <%= post.content %>
 
     <div class="text-right">
 
       <span id="post-like-<%= post.id%>">
         <%= render :partial => "like", :locals => { :post => post } %>
+      </span>
+
+      <span id="post-collection-<%= post.id %>">
+        <%= render :partial => "collection", :locals => { :post => post } %>
       </span>
 
       <% if current_user && post.user == current_user %>

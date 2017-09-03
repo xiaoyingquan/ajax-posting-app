@@ -1,0 +1,4 @@
+str = "<%=j render :partial => "collection", :locals => { :post => @post } %>";
+$("#post-collection-<%= @post.id %>").html(str);
+
+$("#post-heart-<%= @post.id %>").html("<%= @post.collections.count %>" + "❤️");
