@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  belongs_to :category, :optional => true
+
   validates_presence_of :content
   belongs_to :user
 
